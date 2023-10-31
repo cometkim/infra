@@ -1,4 +1,4 @@
-resource "aws_lightsail_instance" "mattermost" {
+resource "aws_lightsail_instance" "mattermost_instance" {
   name              = "mattermost"
   availability_zone = "${var.aws_region}a"
   blueprint_id      = "amazon_linux_2023"
@@ -12,4 +12,9 @@ resource "aws_lightsail_instance" "mattermost" {
   tags = {
     product = "mattermost"
   }
+}
+
+resource "cloudflare_r2_bucket" "mattermost_bucket" {
+  account_id = data.cloudflare_accounts.me.id
+  name       = "mattermost"
 }

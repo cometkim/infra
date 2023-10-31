@@ -41,3 +41,7 @@ provider "cloudflare" {
 provider "neon" {
   api_key = var.neon_api_key
 }
+
+data "cloudflare_accounts" "me" {
+  name = "cometkim"
+}
