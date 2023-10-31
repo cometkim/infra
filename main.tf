@@ -1,4 +1,13 @@
 terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "cometkim"
+
+    workspaces {
+      name = "infra"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -6,7 +15,7 @@ terraform {
     }
 
     cloudflare = {
-      source = "cloudflare/cloudflare"
+      source  = "cloudflare/cloudflare"
       version = "~> 4"
     }
   }
