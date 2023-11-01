@@ -25,6 +25,9 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+
+  # It's using dynamic provider crendential set on Terraform Cloud
+  # See https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials
 }
 
 provider "cloudflare" {
