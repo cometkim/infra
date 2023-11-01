@@ -1,6 +1,6 @@
 variable "aws_region" {
   type    = string
-  default = "us-east-2"
+  default = "ap-northeast-2"
 }
 
 variable "cloudflare_api_token" {
