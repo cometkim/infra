@@ -18,6 +18,10 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 4"
     }
+
+    neon = {
+      source = "kislerdm/neon"
+    }
   }
 
   required_version = ">= 1.5.0"
@@ -32,4 +36,8 @@ provider "aws" {
 
 provider "cloudflare" {
   api_token = var.cloudflare_api_token
+}
+
+provider "neon" {
+  api_key = var.neon_api_key
 }

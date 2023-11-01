@@ -6,3 +6,7 @@ variable "aws_region" {
 variable "cloudflare_api_token" {
   type = string
 }
+
+variable "neon_api_key" {
+  type = string
+}
